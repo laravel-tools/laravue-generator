@@ -9,5 +9,10 @@
             "email": "codetheorist@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "czproject/git-php": "^3.12"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    }
 }
