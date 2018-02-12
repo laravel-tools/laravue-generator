@@ -1,0 +1,13 @@
+{
+    "name": "laravel-tools/laravue-generator",
+    "description": "A package for generating Vue projects right inside of your Laravel site.",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Scott",
+            "email": "codetheorist@gmail.com"
+        }
+    ],
+    "require": {}
+}
