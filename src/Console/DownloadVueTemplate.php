@@ -10,8 +10,6 @@ use Illuminate\Filesystem\Filesystem;
  */
 class DownloadVueTemplate extends Command
 {
-    use Installable;
- 
     /**
      * The filesystem instance.
      *
