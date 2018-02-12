@@ -13,11 +13,16 @@ class LaravueGeneratorServiceProvider extends BaseServiceProvider
 
     public function boot(Router $router)
     {
+        $this->publishes([
+            __DIR__.'/../config/laravue-generator.php' => config_path('laravue-generator.php'),
+        ], 'config');
 
     }
 
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__.'/../config/laravue-generator.php', 'laravue-generator');
+
         if (!defined('VUEJS_TEMPLATE_PATH')) {
             define('VUEJS_TEMPLATE_PATH', realpath(__DIR__.'/../../public/.vue-templates'));
         }
