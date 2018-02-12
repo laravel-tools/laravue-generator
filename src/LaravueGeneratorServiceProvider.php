@@ -4,9 +4,13 @@ namespace LaravelTools\LaravueGenerator;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
+use Illuminate\Console\DetectsApplicationNamespace;
+use Cz\Git\GitRepository;
 
 class ServiceProvider extends BaseServiceProvider
 {
+    use DetectsApplicationNamespace;
+
     public function boot(Router $router)
     {
 
@@ -14,7 +18,13 @@ class ServiceProvider extends BaseServiceProvider
 
     public function register()
     {
+        if (!defined('VUEJS_TEMPLATE_PATH')) {
+            define('VUEJS_TEMPLATE_PATH', realpath(__DIR__.'/../../public/.vue-templates'));
+        }
 
+        if ($this->app->runningInConsole()) {
+            $this->commands([\LaravelTools\LaravueGenerator\Console\DownloadVueTemplate::class]);
+        }
     }
 
     protected function getContainer()
