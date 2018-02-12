@@ -3,7 +3,7 @@
 namespace LaravelTools\LaravueGenerator;
 
 /**
- * Class AdminLTE.
+ * Class LaravueGenerator
  */
 class LaravueGenerator
 {
