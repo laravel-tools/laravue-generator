@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Illuminate\Console\DetectsApplicationNamespace;
 use Cz\Git\GitRepository;
 
-class ServiceProvider extends BaseServiceProvider
+class LaravueGeneratorServiceProvider extends BaseServiceProvider
 {
     use DetectsApplicationNamespace;
 
